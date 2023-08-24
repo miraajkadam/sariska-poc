@@ -13,7 +13,7 @@ function App() {
   }, [])
 
   const startSession = () => {
-    if (sessionName.trim().length === 0) alert('Please enter a session name')
+    if (sessionName.trim().length === 0) alert('Please enter a room name')
 
     coBrowsing.startCoBrowsing(`User${Math.round(Math.random(100) * 100)}`, sessionName)
   }
@@ -22,22 +22,6 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        <button
-          onClick={() => {
-            startSession()
-          }}
-        >
-          START SESSION
-        </button>
-        <input
-          type='text'
-          value={sessionName}
-          onChange={e => {
-            const { value } = e.target
-
-            setSessionName(value)
-          }}
-        />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -49,6 +33,26 @@ function App() {
         >
           Learn React
         </a>
+        <hr />
+        <label htmlFor='room-name'>Enter room name</label>
+        <input
+          name='room-name'
+          id='room-name'
+          type='text'
+          value={sessionName}
+          onChange={e => {
+            const { value } = e.target
+
+            setSessionName(value)
+          }}
+        />
+        <button
+          onClick={() => {
+            startSession()
+          }}
+        >
+          Start Co Browsing
+        </button>
       </header>
     </div>
   )
