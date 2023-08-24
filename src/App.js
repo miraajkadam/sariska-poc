@@ -46,13 +46,7 @@ function App() {
             setSessionName(value)
           }}
         />
-        <button
-          onClick={() => {
-            startSession()
-          }}
-        >
-          Start Co Browsing
-        </button>
+        <button onClick={startSession}>Start Co Browsing</button>
       </header>
     </div>
   )
